@@ -15,6 +15,10 @@ function playGame(playerChoice) {
       computerImg.setAttribute('src', 'images/scissors.jpg');
   }
     let result;
+    document.getElementById("result").innerHTML = result;
+    const main = document.getElementById('computerChoice');
+    main.innerHTML = "";
+    main.appendChild(computerImg);
 
     if (!playerChoice) {
         result = "Válassz!";
@@ -31,10 +35,7 @@ function playGame(playerChoice) {
         result = "Vesztettél!";
         computerScore++;
     }
-    document.getElementById("result").innerHTML = result;
-    const main = document.getElementById('computerChoice');
-    main.innerHTML = "";
-    main.appendChild(computerImg);
+
     document.getElementById("score").innerHTML = `Játékos: ${playerScore} - Számítógép: ${computerScore}`;
 }
 
